@@ -1,34 +1,23 @@
-package com.ntpc.myskills.ui.courses;
+package com.ntpc.myskills.ui.courses.subcourses;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.ntpc.myskills.R;
-import com.ntpc.myskills.databinding.ActivityInformationTechnologyBinding;
-import com.ntpc.myskills.databinding.ActivityMainBinding;
 
 import java.util.Objects;
 
-public class InformationTechnology extends AppCompatActivity {
-
-    private ActivityInformationTechnologyBinding binding;
-    private static final String TAG = "InformationTechnology: ";
+public class TourismHospitalityFashionAndTravelActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_information_technology);
-
-        binding = ActivityInformationTechnologyBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
+        setContentView(R.layout.activity_tourism_hospitality_fashionand_travel_fragment);
         // Sets the Title for the Action Bar
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Information Technology");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Tourism, Hospitality, Fashion, and Travel");
 
         // Shows the back button in the Action Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

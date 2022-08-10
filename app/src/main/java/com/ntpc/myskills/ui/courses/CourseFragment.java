@@ -1,33 +1,36 @@
 package com.ntpc.myskills.ui.courses;
 
-import static androidx.fragment.app.FragmentManager.TAG;
-
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.ntpc.myskills.MainActivity;
 import com.ntpc.myskills.R;
 import com.ntpc.myskills.databinding.FragmentCoursesBinding;
+import com.ntpc.myskills.ui.courses.subcourses.ApprenticeshipAndTradeTestActivity;
+import com.ntpc.myskills.ui.courses.subcourses.AutomotiveAndMechanicalActivity;
+import com.ntpc.myskills.ui.courses.subcourses.CommunityBasedNonFormalEducationActivity;
+import com.ntpc.myskills.ui.courses.subcourses.ConstructionAndMarineActivity;
+import com.ntpc.myskills.ui.courses.subcourses.ElectronicsandElectricalActivity;
+import com.ntpc.myskills.ui.courses.subcourses.ExecutiveManagementActivity;
+import com.ntpc.myskills.ui.courses.subcourses.InformationTechnologyActivity;
+import com.ntpc.myskills.ui.courses.subcourses.NTPCEventsActivity;
+import com.ntpc.myskills.ui.courses.subcourses.NationalProductivityAndIndustryInnovationActivity;
+import com.ntpc.myskills.ui.courses.subcourses.QualityAwardsActivity;
+import com.ntpc.myskills.ui.courses.subcourses.TourismHospitalityFashionAndTravelActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CourseFragment extends Fragment {
 
@@ -57,11 +60,51 @@ public class CourseFragment extends Fragment {
                 String item = adapter.getItem(i);
                 Log.i(TAG, item);
 
-                if (i == 0) {
-                    // Clicked Information Technology
-                    Log.i(TAG, "YO!  " + root.getContext().toString());
-                    startActivity(new Intent(root.getContext(), InformationTechnology.class));
-
+                switch (i) {
+                    case 0: // Information Technology
+                        startActivity(new Intent(root.getContext(), InformationTechnologyActivity.class));
+                        Log.i(TAG, "IT");
+                        break;
+                    case 1: // Executive Management
+                        startActivity(new Intent(root.getContext(), ExecutiveManagementActivity.class));
+                        Log.i(TAG, "EM");
+                        break;
+                    case 2: // Tourism, Hospitality, Fashion, and Travel
+                        startActivity(new Intent(root.getContext(), TourismHospitalityFashionAndTravelActivity.class));
+                        Log.i(TAG, "THFT");
+                        break;
+                    case 3: // Automotive and Mechanical
+                        startActivity(new Intent(root.getContext(), AutomotiveAndMechanicalActivity.class));
+                        Log.i(TAG, "AM");
+                        break;
+                    case 4: // Electronics and Electrical
+                        startActivity(new Intent(root.getContext(), ElectronicsandElectricalActivity.class));
+                        Log.i(TAG, "EE");
+                        break;
+                    case 5: // Construction and Marine
+                        startActivity(new Intent(root.getContext(), ConstructionAndMarineActivity.class));
+                        Log.i(TAG, "CM");
+                        break;
+                    case 6: // National Productivity and Industry Innovation
+                        startActivity(new Intent(root.getContext(), NationalProductivityAndIndustryInnovationActivity.class));
+                        Log.i(TAG, "NPII");
+                        break;
+                    case 7: // Community Based Non-Formal Education
+                        startActivity(new Intent(root.getContext(), CommunityBasedNonFormalEducationActivity.class));
+                        Log.i(TAG, "CBNFE");
+                        break;
+                    case 8: // Apprenticeship and Trade Test
+                        startActivity(new Intent(root.getContext(), ApprenticeshipAndTradeTestActivity.class));
+                        Log.i(TAG, "ATT");
+                        break;
+                    case 9: // NTPC Events
+                        startActivity(new Intent(root.getContext(), NTPCEventsActivity.class));
+                        Log.i(TAG, "NTPCE");
+                        break;
+                    case 10: // Quality Awards
+                        startActivity(new Intent(root.getContext(), QualityAwardsActivity.class));
+                        Log.i(TAG, "QA");
+                        break;
                 }
             }
         });
@@ -80,9 +123,10 @@ public class CourseFragment extends Fragment {
                 "Information Technology", "Executive Management",
                 "Tourism, Hospitality, Fashion, and Travel", "Automotive and Mechanical",
                 "Electronics and Electrical", "Construction and Marine",
-                "National Productivity and Indsutry Innovation",
+                "National Productivity and Industry Innovation",
                 "Community Based Non-Formal Education",
-                "Apprenticeship and Trade Test", "Quality Awards",
-                "NTPC Events"));
+                "Apprenticeship and Trade Test", "NTPC Events", "Quality Awards"
+                ));
+        headerList.add("Quality Awards");
         }
     }

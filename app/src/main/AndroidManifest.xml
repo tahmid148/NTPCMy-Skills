@@ -14,7 +14,37 @@
         android:theme="@style/Theme.NTPCMySkills"
         tools:targetApi="31">
         <activity
-            android:name=".ui.courses.InformationTechnology"
+            android:name=".ui.courses.subcourses.NTPCEventsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.QualityAwardsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.ApprenticeshipAndTradeTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.CommunityBasedNonFormalEducationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.NationalProductivityAndIndustryInnovationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.ConstructionAndMarineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.ElectronicsandElectricalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.AutomotiveAndMechanicalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.TourismHospitalityFashionAndTravelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.ExecutiveManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.courses.subcourses.InformationTechnologyActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
