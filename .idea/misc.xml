@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/layout/activity_information_technology.xml" value="0.20742753623188406" />
         <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/layout/country_row_layout.xml" value="0.25" />
         <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/layout/fragment_courses.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Tahmid/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/shutdown_dialog.xml" value="0.2296195652173913" />
       </map>
     </option>
   </component>

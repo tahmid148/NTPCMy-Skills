@@ -1,5 +1,8 @@
 package com.ntpc.myskills.ui.courses;
 
+import static androidx.fragment.app.FragmentManager.TAG;
+
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,13 +10,16 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.ntpc.myskills.MainActivity;
 import com.ntpc.myskills.R;
 import com.ntpc.myskills.databinding.FragmentCoursesBinding;
 
@@ -29,6 +35,7 @@ public class CourseFragment extends Fragment {
     ListView listView;
     List<String> headerList;
     ArrayAdapter<String> adapter;
+    private static final String TAG = "Button Pressed: ";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,6 +51,21 @@ public class CourseFragment extends Fragment {
                 android.R.layout.simple_list_item_1, android.R.id.text1, headerList);
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = adapter.getItem(i);
+                Log.i(TAG, item);
+
+                if (i == 0) {
+                    // Clicked Information Technology
+                    Log.i(TAG, "YO!  " + root.getContext().toString());
+                    startActivity(new Intent(root.getContext(), InformationTechnology.class));
+
+                }
+            }
+        });
+
         return root;
     }
 
@@ -55,7 +77,7 @@ public class CourseFragment extends Fragment {
 
     private void prepareMenuData() {
         headerList = new ArrayList<>(Arrays.asList(
-                "Home", "Information Technology", "Executive Management",
+                "Information Technology", "Executive Management",
                 "Tourism, Hospitality, Fashion, and Travel", "Automotive and Mechanical",
                 "Electronics and Electrical", "Construction and Marine",
                 "National Productivity and Indsutry Innovation",
