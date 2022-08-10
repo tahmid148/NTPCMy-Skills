@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/layout/country_row_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/layout/fragment_courses.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Tahmid/AndroidStudioProjects/NTPCMySkills/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
