@@ -1,4 +1,4 @@
-package com.ntpc.myskills.ui.dashboard;
+package com.ntpc.myskills.ui.courses;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

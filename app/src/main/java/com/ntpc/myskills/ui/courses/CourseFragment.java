@@ -1,11 +1,13 @@
-package com.ntpc.myskills.ui.dashboard;
+package com.ntpc.myskills.ui.courses;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -16,12 +18,17 @@ import com.ntpc.myskills.R;
 import com.ntpc.myskills.databinding.FragmentCoursesBinding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CourseFragment extends Fragment {
 
     private FragmentCoursesBinding binding;
     ListView listView;
+    List<String> headerList;
+    ArrayAdapter<String> adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,29 +37,12 @@ public class CourseFragment extends Fragment {
 
         binding = FragmentCoursesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
         listView = root.findViewById(R.id.list_view);
-
-        ArrayList<String> testData = new ArrayList<>();
-        testData.add("1");
-        testData.add("2");
-        testData.add("3");
-        testData.add("4");
-        testData.add("5");
-        testData.add("6");
-        testData.add("7");
-        testData.add("8");
-        testData.add("9");
-        testData.add("10");
-        testData.add("11");
-        testData.add("12");
-        testData.add("13");
-
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, testData);
+        prepareMenuData();
+        adapter = new ArrayAdapter<String>(this.getActivity(),
+                android.R.layout.simple_list_item_1, android.R.id.text1, headerList);
         listView.setAdapter(adapter);
-
-
 
         return root;
     }
@@ -62,4 +52,15 @@ public class CourseFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-}
+
+    private void prepareMenuData() {
+        headerList = new ArrayList<>(Arrays.asList(
+                "Home", "Information Technology", "Executive Management",
+                "Tourism, Hospitality, Fashion, and Travel", "Automotive and Mechanical",
+                "Electronics and Electrical", "Construction and Marine",
+                "National Productivity and Indsutry Innovation",
+                "Community Based Non-Formal Education",
+                "Apprenticeship and Trade Test", "Quality Awards",
+                "NTPC Events"));
+        }
+    }
