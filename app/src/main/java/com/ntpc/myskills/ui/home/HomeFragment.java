@@ -1,7 +1,9 @@
 package com.ntpc.myskills.ui.home;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,8 +16,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavHost;
+import androidx.navigation.Navigation;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ntpc.myskills.MainActivity;
 import com.ntpc.myskills.R;
+import com.ntpc.myskills.SharedViewModel;
 import com.ntpc.myskills.databinding.FragmentHomeBinding;
 import com.ntpc.myskills.ui.courses.CourseFragment;
 
@@ -23,6 +31,11 @@ import com.ntpc.myskills.ui.courses.CourseFragment;
 public class HomeFragment extends Fragment {
 
     private static final String TAG = "Home Fragment: ";
+    private SharedViewModel model;
+    Button courses;
+    Button enrol;
+    Button calendar;
+    Button contact;
     private FragmentHomeBinding binding;
 
     public HomeFragment() {
@@ -52,10 +65,10 @@ public class HomeFragment extends Fragment {
                      "lifelong opportunities.");
         desc.setTextColor(Color.BLACK);
 
-        Button courses = root.findViewById(R.id.view_courses_btn);
-        Button enrol = root.findViewById(R.id.enrol_btn);
-        Button calendar = root.findViewById(R.id.view_calendar_btn);
-        Button contact = root.findViewById(R.id.contact_btn);
+        courses = root.findViewById(R.id.view_courses_btn);
+        enrol = root.findViewById(R.id.enrol_btn);
+        calendar = root.findViewById(R.id.view_calendar_btn);
+        contact = root.findViewById(R.id.contact_btn);
 
         courses.setText("View Courses");
         enrol.setText("Enrol");
@@ -67,23 +80,37 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.i(TAG, "View Courses has been clicked");
-                Fragment coursePage = new CourseFragment();
-                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, coursePage);
-                fragmentTransaction.commit();
+//                Fragment coursePage = new CourseFragment();
+//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, coursePage);
+//                fragmentTransaction.commit();
             }
         });
-
-
-
+        
+        // set function for contact us button
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setData(Uri.parse("mailto:"));
+                String[] to={"prity.ram@fnu.ac.fj"};
+                intent.putExtra(Intent.EXTRA_EMAIL,to);
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Course Enquiry");
+                intent.putExtra(Intent.EXTRA_TEXT,"");
+                intent.setType("message/rfc822");
+                Intent chooser = Intent.createChooser(intent, "Send Email");
+                startActivity(chooser);
+            }
+        });
+        
         return root;
     }
+
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
-
 
 }

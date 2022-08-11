@@ -14,8 +14,11 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.NavHost;
 
 import com.ntpc.myskills.R;
+import com.ntpc.myskills.SharedViewModel;
 import com.ntpc.myskills.databinding.FragmentCoursesBinding;
 import com.ntpc.myskills.ui.courses.subcourses.ApprenticeshipAndTradeTestActivity;
 import com.ntpc.myskills.ui.courses.subcourses.AutomotiveAndMechanicalActivity;
@@ -39,6 +42,7 @@ public class CourseFragment extends Fragment {
     ListView listView;
     List<String> headerList;
     ArrayAdapter<String> adapter;
+    private SharedViewModel model;
     private static final String TAG = "Button Pressed: ";
 
     public CourseFragment() {
@@ -135,6 +139,5 @@ public class CourseFragment extends Fragment {
                 ));
         headerList.add("Quality Awards");
         }
-
 
 }

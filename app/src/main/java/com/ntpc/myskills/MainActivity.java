@@ -5,24 +5,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ntpc.myskills.databinding.ActivityMainBinding;
-import com.ntpc.myskills.ui.courses.CourseFragment;
-import com.ntpc.myskills.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity{
 
     private ActivityMainBinding binding;
-    private final static String TAG = "Main";
+    private final static String TAG = "Main: ";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
