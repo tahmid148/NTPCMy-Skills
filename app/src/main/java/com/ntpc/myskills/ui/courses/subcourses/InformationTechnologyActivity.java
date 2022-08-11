@@ -26,6 +26,8 @@ public class InformationTechnologyActivity extends AppCompatActivity {
 
         // Shows the back button in the Action Bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+//        findViewById(R.id.)
     }
 
     /* This event will ensure that when the back button is pressed, it returns the user to the
