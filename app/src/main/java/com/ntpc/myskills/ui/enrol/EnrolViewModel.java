@@ -10,7 +10,6 @@ public class EnrolViewModel extends ViewModel {
 
     public EnrolViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
     }
 
     public LiveData<String> getText() {
