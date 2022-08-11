@@ -1,4 +1,4 @@
-package com.ntpc.myskills.ui.notifications;
+package com.ntpc.myskills.ui.enrol;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.ntpc.myskills.databinding.FragmentNotificationsBinding;
+import com.ntpc.myskills.databinding.FragmentEnrolBinding;
 
-public class NotificationsFragment extends Fragment {
+public class EnrolFragment extends Fragment {
 
-    private FragmentNotificationsBinding binding;
+    private FragmentEnrolBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        NotificationsViewModel notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        EnrolViewModel enrolViewModel =
+                new ViewModelProvider(this).get(EnrolViewModel.class);
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding = FragmentEnrolBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        enrolViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
