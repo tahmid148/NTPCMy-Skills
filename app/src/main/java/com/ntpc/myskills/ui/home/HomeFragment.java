@@ -1,7 +1,9 @@
 package com.ntpc.myskills.ui.home;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +12,22 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.ntpc.myskills.R;
 import com.ntpc.myskills.databinding.FragmentHomeBinding;
+import com.ntpc.myskills.ui.courses.CourseFragment;
+
 
 public class HomeFragment extends Fragment {
 
+    private static final String TAG = "Home Fragment: ";
     private FragmentHomeBinding binding;
+
+    public HomeFragment() {
+
+    }
 
     @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -40,6 +50,7 @@ public class HomeFragment extends Fragment {
                      "career and personal goals. You will find that NTPC \n" +
                      "offers specific training programs that translate into \n" +
                      "lifelong opportunities.");
+        desc.setTextColor(Color.BLACK);
 
         Button courses = root.findViewById(R.id.view_courses_btn);
         Button enrol = root.findViewById(R.id.enrol_btn);
@@ -51,6 +62,19 @@ public class HomeFragment extends Fragment {
         calendar.setText("View Calendar");
         contact.setText("Contact Us");
 
+        // Set function for courses button - takes user to courses page
+        courses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG, "View Courses has been clicked");
+                Fragment coursePage = new CourseFragment();
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, coursePage);
+                fragmentTransaction.commit();
+            }
+        });
+
+
 
         return root;
     }
@@ -60,4 +84,6 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.ntpc.myskills.ui.courses;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,10 @@ public class CourseFragment extends Fragment {
     List<String> headerList;
     ArrayAdapter<String> adapter;
     private static final String TAG = "Button Pressed: ";
+
+    public CourseFragment() {
+
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -109,6 +114,7 @@ public class CourseFragment extends Fragment {
             }
         });
 
+
         return root;
     }
 
@@ -129,4 +135,6 @@ public class CourseFragment extends Fragment {
                 ));
         headerList.add("Quality Awards");
         }
-    }
+
+
+}
