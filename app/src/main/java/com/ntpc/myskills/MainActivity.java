@@ -69,6 +69,15 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        // set function for enrol button
+        enrol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View enrolView = navView.findViewById(R.id.navigation_notifications);
+                enrolView.performClick();
+            }
+        });
+
 
         // set function for contact us button
         contact.setOnClickListener(new View.OnClickListener() {
