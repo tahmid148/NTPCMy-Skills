@@ -61,18 +61,15 @@ public class HomeFragment extends Fragment {
                      "lifelong opportunities.");
         desc.setTextColor(Color.BLACK);
 
-        // Set function for courses button - takes user to courses page
-//        courses.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Log.i(TAG, "View Courses has been clicked");
-////                Fragment coursePage = new CourseFragment();
-////                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-////                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, coursePage);
-////                fragmentTransaction.addToBackStack(null);
-////                fragmentTransaction.commit();
-//            }
-//        });
+        Button courses = root.findViewById(R.id.view_courses_btn);
+        Button enrol = root.findViewById(R.id.enrol_btn);
+        Button calendar = root.findViewById(R.id.view_calendar_btn);
+        Button contact = root.findViewById(R.id.contact_btn);
+
+        courses.setText("View Courses");
+        enrol.setText("Enrol");
+        calendar.setText("View Calendar");
+        contact.setText("Contact Us");
         
         return root;
     }
