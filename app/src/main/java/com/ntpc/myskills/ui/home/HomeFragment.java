@@ -32,10 +32,6 @@ public class HomeFragment extends Fragment {
 
     private static final String TAG = "Home Fragment: ";
     private SharedViewModel model;
-    Button courses;
-    Button enrol;
-    Button calendar;
-    Button contact;
     private FragmentHomeBinding binding;
 
     public HomeFragment() {
@@ -65,43 +61,18 @@ public class HomeFragment extends Fragment {
                      "lifelong opportunities.");
         desc.setTextColor(Color.BLACK);
 
-        courses = root.findViewById(R.id.view_courses_btn);
-        enrol = root.findViewById(R.id.enrol_btn);
-        calendar = root.findViewById(R.id.view_calendar_btn);
-        contact = root.findViewById(R.id.contact_btn);
-
-        courses.setText("View Courses");
-        enrol.setText("Enrol");
-        calendar.setText("View Calendar");
-        contact.setText("Contact Us");
-
         // Set function for courses button - takes user to courses page
-        courses.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG, "View Courses has been clicked");
-//                Fragment coursePage = new CourseFragment();
-//                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, coursePage);
-//                fragmentTransaction.commit();
-            }
-        });
-        
-        // set function for contact us button
-        contact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setData(Uri.parse("mailto:"));
-                String[] to={"prity.ram@fnu.ac.fj"};
-                intent.putExtra(Intent.EXTRA_EMAIL,to);
-                intent.putExtra(Intent.EXTRA_SUBJECT,"Course Enquiry");
-                intent.putExtra(Intent.EXTRA_TEXT,"");
-                intent.setType("message/rfc822");
-                Intent chooser = Intent.createChooser(intent, "Send Email");
-                startActivity(chooser);
-            }
-        });
+//        courses.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.i(TAG, "View Courses has been clicked");
+////                Fragment coursePage = new CourseFragment();
+////                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+////                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, coursePage);
+////                fragmentTransaction.addToBackStack(null);
+////                fragmentTransaction.commit();
+//            }
+//        });
         
         return root;
     }
